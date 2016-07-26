@@ -14,11 +14,6 @@ import java.util.Calendar;
 
 public class MyCalendarFrame extends JFrame{
 	
-	/**
-	 * Default serial version.
-	 */
-	private static final long serialVersionUID = 1L;
-	
 	static JPanel[] daysOfWeekPanels = new JPanel[7];
 	
 	static JPanel contentPane;

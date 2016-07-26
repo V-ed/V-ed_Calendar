@@ -13,11 +13,6 @@ import javax.swing.JTextArea;
  */
 public class Field extends JTextArea{
 	
-	/**
-	 * Default serial number.
-	 */
-	private static final long serialVersionUID = 1L;
-	
 	private String defaultText;
 	private boolean isChanged = false;
 	

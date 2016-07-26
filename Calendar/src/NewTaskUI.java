@@ -24,11 +24,6 @@ import javax.swing.DefaultComboBoxModel;
 
 public class NewTaskUI extends JFrame{
 	
-	/**
-	 * Default serial
-	 */
-	private static final long serialVersionUID = 1L;
-	
 	private int day;
 	private int month;
 	private int year;
