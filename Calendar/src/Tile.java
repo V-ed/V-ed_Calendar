@@ -29,11 +29,11 @@ public class Tile{
 	private boolean hasTasks = false;
 	private DayWithEvent tileEvents;
 	
-	private JLabel dateLabel;
+	protected JLabel dateLabel;
 	private String[] taskNames;
-	private JButton button;
+	protected JButton button;
 	
-	private JPanel tilePanel;
+	protected JPanel tilePanel;
 	private JPanel tasksPanel = new JPanel();
 	private JLabel[] taskLabels;
 	
@@ -303,7 +303,7 @@ public class Tile{
 		return tilePanel;
 	}
 	
-	private void initiateButton(JButton buttonToInitiate){
+	protected void initiateButton(JButton buttonToInitiate){
 		
 		buttonToInitiate.addActionListener(buttonAction);
 		

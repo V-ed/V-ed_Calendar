@@ -11,16 +11,13 @@ public class Calendar_Main{
 	
 	static GregorianCalendar date = new GregorianCalendar();
 	
-	public final static int numberOfDates = 6 * 7;
+	public final static int numberOfDaysForMonth = 6 * 7;
 	
 	static JLabel currentMonth = new JLabel();
 	
 	static JLabel[] daysOfWeekLabels = new JLabel[7];
 	
-	static Tile[] tiles = new Tile[numberOfDates];
-	
-	static JButton buttonPastMonth = new JButton("\u2190");	//left arrow
-	static JButton buttonNextMonth = new JButton("\u2192");	//right arrow
+	static Tile[] tiles = new Tile[numberOfDaysForMonth];
 	
 	static String[] daysOfWeek = { "Dimanche", "Lundi", "Mardi", "Mercredi",
 			"Jeudi", "Vendredi", "Samedi" };
@@ -42,14 +39,9 @@ public class Calendar_Main{
 	
 	public static void main(String[] args){
 		
-		buttonPastMonth.addActionListener(pastMonth);
-		buttonNextMonth.addActionListener(nextMonth);
-		
 		mainFrame = new MyCalendarFrame();
 		
 		updateDates();
-		
-		
 		
 	}
 	
@@ -150,40 +142,6 @@ public class Calendar_Main{
 		
 	}
 	
-	private static ActionListener pastMonth = new ActionListener(){
-		@Override
-		public void actionPerformed(ActionEvent ae){
-			
-			if(currentAppMonth > 0){
-				currentAppMonth--;
-			}
-			else{
-				currentAppMonth = 11;
-				currentAppYear--;
-			}
-			
-			updateDates();
-			
-		}
-	};
-	
-	private static ActionListener nextMonth = new ActionListener(){
-		@Override
-		public void actionPerformed(ActionEvent ae){
-			
-			if(currentAppMonth < 11){
-				currentAppMonth++;
-			}
-			else{
-				currentAppMonth = 0;
-				currentAppYear++;
-			}
-			
-			updateDates();
-			
-		}
-	};
-	
 	public static void refreshTiles(){
 		
 		for(int i = 0; i < tiles.length; i++){
@@ -274,7 +232,7 @@ public class Calendar_Main{
 		//start at the end of the current month's length, only increments until
 		//the last dsplayed date. FAKE REPRESENTATION OF NEXT MONTH
 		for(int i = currentMonthFirstDay + lengthOfActualMonth
-				- currentStartWeekDate; i < numberOfDates; i++){
+				- currentStartWeekDate; i < numberOfDaysForMonth; i++){
 			
 			if(currentAppMonth == 11){
 				tiles[i].setTileMonth(0);
